@@ -20,15 +20,15 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
             
-            <tag> CNN </tag>
+            <tag> DL </tag>
+            
+            <tag> UNet </tag>
             
             <tag> Pytorch </tag>
             
-            <tag> UNet </tag>
+            <tag> CNN </tag>
             
         </tags>
       
@@ -53,15 +53,15 @@
       
         <tags>
             
+            <tag> ML </tag>
+            
             <tag> DL </tag>
             
-            <tag> ML </tag>
+            <tag> Pytorch </tag>
             
             <tag> CNN </tag>
             
             <tag> ResNet </tag>
-            
-            <tag> Pytorch </tag>
             
         </tags>
       
@@ -86,13 +86,13 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
             
-            <tag> CNN </tag>
+            <tag> DL </tag>
             
             <tag> Pytorch </tag>
+            
+            <tag> CNN </tag>
             
             <tag> VGG </tag>
             
@@ -148,9 +148,9 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
+            
+            <tag> DL </tag>
             
             <tag> Pytorch </tag>
             
@@ -177,9 +177,9 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
+            
+            <tag> DL </tag>
             
             <tag> Pytorch </tag>
             
@@ -210,9 +210,9 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
+            
+            <tag> DL </tag>
             
             <tag> Pytorch </tag>
             
@@ -243,9 +243,9 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
+            
+            <tag> DL </tag>
             
             <tag> Pytorch </tag>
             
@@ -280,9 +280,9 @@
       
         <tags>
             
-            <tag> DL </tag>
-            
             <tag> ML </tag>
+            
+            <tag> DL </tag>
             
             <tag> Matplotlib </tag>
             

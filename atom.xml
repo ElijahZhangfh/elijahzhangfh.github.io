@@ -38,15 +38,15 @@
     <category term="UNet" scheme="http://example.com/categories/UNet/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
     
-    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
+    
+    <category term="UNet" scheme="http://example.com/tags/UNet/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
-    <category term="UNet" scheme="http://example.com/tags/UNet/"/>
+    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
     
   </entry>
   
@@ -73,15 +73,15 @@
     <category term="ResNet" scheme="http://example.com/categories/ResNet/"/>
     
     
+    <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
-    <category term="ML" scheme="http://example.com/tags/ML/"/>
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
     <category term="CNN" scheme="http://example.com/tags/CNN/"/>
     
     <category term="ResNet" scheme="http://example.com/tags/ResNet/"/>
-    
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
   </entry>
   
@@ -108,13 +108,13 @@
     <category term="VGG" scheme="http://example.com/categories/VGG/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
     
-    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
+    
+    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
     
     <category term="VGG" scheme="http://example.com/tags/VGG/"/>
     
@@ -165,9 +165,9 @@
     <category term="Pytorch" scheme="http://example.com/categories/Pytorch/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
@@ -193,9 +193,9 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
@@ -225,9 +225,9 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
@@ -257,9 +257,9 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
@@ -293,9 +293,9 @@
     <category term="Matplotlib" scheme="http://example.com/categories/Matplotlib/"/>
     
     
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="Matplotlib" scheme="http://example.com/tags/Matplotlib/"/>
     
