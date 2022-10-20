@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>elijah</title>
   
   
   <link href="http://example.com/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>elijah</name>
     
   </author>
   
@@ -38,13 +38,13 @@
     <category term="UNet" scheme="http://example.com/categories/UNet/"/>
     
     
-    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
-    
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
     <category term="UNet" scheme="http://example.com/tags/UNet/"/>
     
@@ -73,15 +73,15 @@
     <category term="ResNet" scheme="http://example.com/categories/ResNet/"/>
     
     
-    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
-    
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
     
+    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
+    
     <category term="ResNet" scheme="http://example.com/tags/ResNet/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
   </entry>
   
@@ -108,15 +108,15 @@
     <category term="VGG" scheme="http://example.com/categories/VGG/"/>
     
     
-    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
-    
-    <category term="VGG" scheme="http://example.com/tags/VGG/"/>
-    
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="CNN" scheme="http://example.com/tags/CNN/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
+    
+    <category term="VGG" scheme="http://example.com/tags/VGG/"/>
     
   </entry>
   
@@ -165,11 +165,11 @@
     <category term="Pytorch" scheme="http://example.com/categories/Pytorch/"/>
     
     
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
   </entry>
   
@@ -193,11 +193,11 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
     <category term="Object detection" scheme="http://example.com/tags/Object-detection/"/>
     
@@ -225,11 +225,11 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
     <category term="Object detection" scheme="http://example.com/tags/Object-detection/"/>
     
@@ -257,11 +257,11 @@
     <category term="Object detection" scheme="http://example.com/categories/Object-detection/"/>
     
     
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
     
     <category term="Object detection" scheme="http://example.com/tags/Object-detection/"/>
     
@@ -293,11 +293,11 @@
     <category term="Matplotlib" scheme="http://example.com/categories/Matplotlib/"/>
     
     
-    <category term="Matplotlib" scheme="http://example.com/tags/Matplotlib/"/>
-    
     <category term="DL" scheme="http://example.com/tags/DL/"/>
     
     <category term="ML" scheme="http://example.com/tags/ML/"/>
+    
+    <category term="Matplotlib" scheme="http://example.com/tags/Matplotlib/"/>
     
     <category term="Python" scheme="http://example.com/tags/Python/"/>
     
