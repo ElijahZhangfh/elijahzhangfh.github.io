@@ -18,8 +18,8 @@
   
   <entry>
     <title>CNN-UNet总结</title>
-    <link href="http://example.com/2022/10/15/CNN-UNet%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2022/10/15/CNN-UNet%E6%80%BB%E7%BB%93/</id>
+    <link href="http://example.com/2022/10/15/cnn/CNN-UNet%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2022/10/15/cnn/CNN-UNet%E6%80%BB%E7%BB%93/</id>
     <published>2022-10-15T10:29:38.000Z</published>
     <updated>2022-10-15T10:31:28.864Z</updated>
     
@@ -52,8 +52,8 @@
   
   <entry>
     <title>CNN-ResNet总结</title>
-    <link href="http://example.com/2022/10/15/CNN-ResNet%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2022/10/15/CNN-ResNet%E6%80%BB%E7%BB%93/</id>
+    <link href="http://example.com/2022/10/15/cnn/CNN-ResNet%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2022/10/15/cnn/CNN-ResNet%E6%80%BB%E7%BB%93/</id>
     <published>2022-10-15T04:06:22.000Z</published>
     <updated>2022-10-15T10:31:34.404Z</updated>
     
@@ -87,8 +87,8 @@
   
   <entry>
     <title>CNN-VGG总结</title>
-    <link href="http://example.com/2022/10/12/CNN-VGG%E6%80%BB%E7%BB%93/"/>
-    <id>http://example.com/2022/10/12/CNN-VGG%E6%80%BB%E7%BB%93/</id>
+    <link href="http://example.com/2022/10/12/cnn/CNN-VGG%E6%80%BB%E7%BB%93/"/>
+    <id>http://example.com/2022/10/12/cnn/CNN-VGG%E6%80%BB%E7%BB%93/</id>
     <published>2022-10-12T11:22:41.000Z</published>
     <updated>2022-10-15T10:31:41.639Z</updated>
     
@@ -122,8 +122,8 @@
   
   <entry>
     <title>树莓派 PICO基础教程（基于MicroPython）</title>
-    <link href="http://example.com/2022/10/12/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/"/>
-    <id>http://example.com/2022/10/12/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/</id>
+    <link href="http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/"/>
+    <id>http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/</id>
     <published>2022-10-12T06:06:45.000Z</published>
     <updated>2022-10-12T06:07:24.742Z</updated>
     
@@ -146,37 +146,9 @@
   </entry>
   
   <entry>
-    <title>深度学习-自动求导(Pytorch)</title>
-    <link href="http://example.com/2022/10/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC-Pytorch/"/>
-    <id>http://example.com/2022/10/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC-Pytorch/</id>
-    <published>2022-10-12T06:05:53.000Z</published>
-    <updated>2022-10-12T06:06:33.510Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="深度学习-自动求导-Pytorch"><a href="#深度学习-自动求导-Pytorch" class="headerlink" title="深度学习-自动求导(Pytorch)"></a>深度学习-自动求导(Pytorch)</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br></pre></td></tr></tbody></table></figure><p>创建一个1 * 4的向量</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = torch.arange(<span class="number">4.0</span>)</span><br><span class="line">x, x.shape</span><br></pre></td></tr></tbody></table></figure><blockquote><p>(tensor([0., 1., 2., 3.]), torch.Size([4]))</p></blockquote><ol><li>标量是0阶张量(一个数)，是1 * 1的；</li><li>向量是一阶张量，是1 * n的；</li><li>张量可以给出所有坐标间的关系，是n * n的；</li><li>张量不能使用backward()，需要转化为标量。</li></ol><p>如果需要自动计算梯度，需要设置x.requires_grad_为True</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x.requires_grad_(<span class="literal">True</span>)</span><br><span class="line">x.grad</span><br></pre></td></tr></tbody></table></figure><p>y = 2 * x * x^T</p><p>此时y是一个标量，28 = 2 * (0 * 0  + 1 * 1 + 2 * 2 + 3 * 3)</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算两个张量的点积（内积）</span></span><br><span class="line">y = <span class="number">2</span> * torch.dot(x, x)</span><br><span class="line">y</span><br></pre></td></tr></tbody></table></figure><blockquote><p>tensor(28., grad_fn=<mulbackward0>)</mulbackward0></p></blockquote><p>调用backward()自动计算y关于x的梯度</p><p>由于x是一个一维的向量，所以y对于x求导就等于4 * x，即4 * [0, 1, 2, 3] = [0, 4, 8, 12]</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y.backward()</span><br><span class="line">x.grad</span><br></pre></td></tr></tbody></table></figure><blockquote><p>tensor([ 0.,  4.,  8., 12.])</p></blockquote><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 验证求导过程是否正确</span></span><br><span class="line">x.grad == <span class="number">4</span> * x</span><br></pre></td></tr></tbody></table></figure><blockquote><p>tensor([True, True, True, True])</p></blockquote><p>默认情况下，pytorch会累积梯度，因此在下一次计算前，需要清除之前保存的值</p><p>torch.sum()表示对输入的tensor数据的某一维度求和<br>令y = x.sum()，y表示一个数，因此y对x的求导为1</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x.grad.zero_()</span><br><span class="line">y = x.<span class="built_in">sum</span>()</span><br><span class="line">y.backward()</span><br><span class="line">x.grad, y</span><br></pre></td></tr></tbody></table></figure><blockquote><p>(tensor([1., 1., 1., 1.]), tensor(6., grad_fn=<sumbackward0>))</sumbackward0></p></blockquote><p>当y不是标量时</p><p>例如：y = x * x，此时y是一个向量，所以无法直接使用backward()</p><p>要使用backward()有两种方法：</p><ol><li>使用y.sum()</li><li>torch.ones_like(x)</li></ol><p>y对x求导等于2 * x，即2 * [0, 1, 2, 3] = [0, 2, 4, 6]</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x.grad.zero_()</span><br><span class="line">y = x * x</span><br><span class="line">y.<span class="built_in">sum</span>().backward()</span><br><span class="line"><span class="comment"># y.backward(torch.ones_like(x))</span></span><br><span class="line">x.grad</span><br></pre></td></tr></tbody></table></figure><blockquote><p>tensor([0., 2., 4., 6.])</p></blockquote><p>在运算的过程中，可以使用detach()将部分计算结果移动到图外</p><p>此时，对系统来说，u变成了与x无关的量</p><p><a href="https://blog.csdn.net/qq_31244453/article/details/112473947">参考资料</a></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x.grad.zero_()</span><br><span class="line">y = x * x</span><br><span class="line">u = y.detach()</span><br><span class="line">z = u * x</span><br><span class="line">z.<span class="built_in">sum</span>().backward()</span><br><span class="line">x.grad == u</span><br></pre></td></tr></tbody></table></figure><blockquote><p>tensor([True, True, True, True])</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;深度学习-自动求导-Pytorch&quot;&gt;&lt;a href=&quot;#深度学习-自动求导-Pytorch&quot; class=&quot;headerlink&quot; title=&quot;深度学习-自动求导(Pytorch)&quot;&gt;&lt;/a&gt;深度学习-自动求导(Pytorch)&lt;/h3&gt;&lt;figure cla</summary>
-      
-    
-    
-    
-    <category term="Pytorch" scheme="http://example.com/categories/Pytorch/"/>
-    
-    
-    <category term="ML" scheme="http://example.com/tags/ML/"/>
-    
-    <category term="DL" scheme="http://example.com/tags/DL/"/>
-    
-    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
     <title>YOLOV5-Pytorch(YOLO数据集格式)</title>
-    <link href="http://example.com/2022/10/12/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/"/>
-    <id>http://example.com/2022/10/12/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/</id>
+    <link href="http://example.com/2022/10/12/object_detection/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/"/>
+    <id>http://example.com/2022/10/12/object_detection/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/</id>
     <published>2022-10-12T06:04:37.000Z</published>
     <updated>2022-10-12T06:10:00.337Z</updated>
     
@@ -207,8 +179,8 @@
   
   <entry>
     <title>YOLOV5-Pytorch(VOC数据集格式)</title>
-    <link href="http://example.com/2022/10/12/YOLOV5-Pytorch-VOC%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/"/>
-    <id>http://example.com/2022/10/12/YOLOV5-Pytorch-VOC%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/</id>
+    <link href="http://example.com/2022/10/12/object_detection/YOLOV5-Pytorch-VOC%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/"/>
+    <id>http://example.com/2022/10/12/object_detection/YOLOV5-Pytorch-VOC%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/</id>
     <published>2022-10-12T06:03:20.000Z</published>
     <updated>2022-10-12T06:09:50.568Z</updated>
     
@@ -239,8 +211,8 @@
   
   <entry>
     <title>YOLOV5-ONNX-Flask</title>
-    <link href="http://example.com/2022/10/12/YOLOV5-ONNX-Flask/"/>
-    <id>http://example.com/2022/10/12/YOLOV5-ONNX-Flask/</id>
+    <link href="http://example.com/2022/10/12/object_detection/YOLOV5-ONNX-Flask/"/>
+    <id>http://example.com/2022/10/12/object_detection/YOLOV5-ONNX-Flask/</id>
     <published>2022-10-12T06:02:03.000Z</published>
     <updated>2022-10-12T06:09:41.040Z</updated>
     
@@ -275,8 +247,8 @@
   
   <entry>
     <title>Matplotlib常用方法</title>
-    <link href="http://example.com/2022/10/12/Matplotlib%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
-    <id>http://example.com/2022/10/12/Matplotlib%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</id>
+    <link href="http://example.com/2022/10/12/others/Matplotlib%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/10/12/others/Matplotlib%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</id>
     <published>2022-10-12T06:00:56.000Z</published>
     <updated>2022-10-12T06:09:27.137Z</updated>
     
@@ -305,8 +277,8 @@
   
   <entry>
     <title>ipynb转换格式</title>
-    <link href="http://example.com/2022/10/12/ipynb%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F/"/>
-    <id>http://example.com/2022/10/12/ipynb%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F/</id>
+    <link href="http://example.com/2022/10/12/others/ipynb%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F/"/>
+    <id>http://example.com/2022/10/12/others/ipynb%E8%BD%AC%E6%8D%A2%E6%A0%BC%E5%BC%8F/</id>
     <published>2022-10-12T06:00:01.000Z</published>
     <updated>2022-10-12T06:00:29.301Z</updated>
     
@@ -329,8 +301,8 @@
   
   <entry>
     <title>Git常见问题-OpenSSL SSL_read Connection was reset</title>
-    <link href="http://example.com/2022/10/12/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-OpenSSL-SSL-read-Connection-was-reset/"/>
-    <id>http://example.com/2022/10/12/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-OpenSSL-SSL-read-Connection-was-reset/</id>
+    <link href="http://example.com/2022/10/12/git/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-OpenSSL-SSL-read-Connection-was-reset/"/>
+    <id>http://example.com/2022/10/12/git/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-OpenSSL-SSL-read-Connection-was-reset/</id>
     <published>2022-10-12T05:59:17.000Z</published>
     <updated>2022-10-12T05:59:45.208Z</updated>
     
@@ -353,8 +325,8 @@
   
   <entry>
     <title>Git常见问题-Deployer not found git</title>
-    <link href="http://example.com/2022/10/12/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-Deployer-not-found-git/"/>
-    <id>http://example.com/2022/10/12/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-Deployer-not-found-git/</id>
+    <link href="http://example.com/2022/10/12/git/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-Deployer-not-found-git/"/>
+    <id>http://example.com/2022/10/12/git/Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98-Deployer-not-found-git/</id>
     <published>2022-10-12T05:58:33.000Z</published>
     <updated>2022-10-12T05:59:01.330Z</updated>
     
@@ -377,8 +349,8 @@
   
   <entry>
     <title>Android-ViewModel</title>
-    <link href="http://example.com/2022/10/12/Android-ViewModel/"/>
-    <id>http://example.com/2022/10/12/Android-ViewModel/</id>
+    <link href="http://example.com/2022/10/12/android/Android-ViewModel/"/>
+    <id>http://example.com/2022/10/12/android/Android-ViewModel/</id>
     <published>2022-10-12T05:57:33.000Z</published>
     <updated>2022-10-12T05:58:20.427Z</updated>
     
@@ -405,8 +377,8 @@
   
   <entry>
     <title>Android-UI常用控件</title>
-    <link href="http://example.com/2022/10/12/Android-UI%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6/"/>
-    <id>http://example.com/2022/10/12/Android-UI%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6/</id>
+    <link href="http://example.com/2022/10/12/android/Android-UI%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6/"/>
+    <id>http://example.com/2022/10/12/android/Android-UI%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6/</id>
     <published>2022-10-12T05:56:39.000Z</published>
     <updated>2022-10-12T05:57:17.094Z</updated>
     
@@ -431,8 +403,8 @@
   
   <entry>
     <title>Android-enableJetifier</title>
-    <link href="http://example.com/2022/10/12/Android-enableJetifier/"/>
-    <id>http://example.com/2022/10/12/Android-enableJetifier/</id>
+    <link href="http://example.com/2022/10/12/android/Android-enableJetifier/"/>
+    <id>http://example.com/2022/10/12/android/Android-enableJetifier/</id>
     <published>2022-10-12T05:48:25.000Z</published>
     <updated>2022-10-12T05:55:42.569Z</updated>
     
@@ -455,8 +427,8 @@
   
   <entry>
     <title>Android-AndroidStudio控制台乱码</title>
-    <link href="http://example.com/2022/10/12/Android-AndroidStudio%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
-    <id>http://example.com/2022/10/12/Android-AndroidStudio%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</id>
+    <link href="http://example.com/2022/10/12/android/Android-AndroidStudio%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/"/>
+    <id>http://example.com/2022/10/12/android/Android-AndroidStudio%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B9%B1%E7%A0%81/</id>
     <published>2022-10-12T05:47:30.000Z</published>
     <updated>2022-10-12T05:48:03.978Z</updated>
     
@@ -479,8 +451,8 @@
   
   <entry>
     <title>Android-android.app.Application cannot be cast to</title>
-    <link href="http://example.com/2022/10/12/Android-android.app.Application%20cannot%20be%20cast%20to/"/>
-    <id>http://example.com/2022/10/12/Android-android.app.Application%20cannot%20be%20cast%20to/</id>
+    <link href="http://example.com/2022/10/12/android/Android-android.app.Application%20cannot%20be%20cast%20to/"/>
+    <id>http://example.com/2022/10/12/android/Android-android.app.Application%20cannot%20be%20cast%20to/</id>
     <published>2022-10-12T05:45:13.000Z</published>
     <updated>2022-10-12T05:47:17.733Z</updated>
     
@@ -503,8 +475,8 @@
   
   <entry>
     <title>Andorid-底部导航栏</title>
-    <link href="http://example.com/2022/10/12/Andorid-%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F/"/>
-    <id>http://example.com/2022/10/12/Andorid-%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F/</id>
+    <link href="http://example.com/2022/10/12/android/Andorid-%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F/"/>
+    <id>http://example.com/2022/10/12/android/Andorid-%E5%BA%95%E9%83%A8%E5%AF%BC%E8%88%AA%E6%A0%8F/</id>
     <published>2022-10-12T05:44:16.000Z</published>
     <updated>2022-10-12T06:08:11.169Z</updated>
     
@@ -529,8 +501,8 @@
   
   <entry>
     <title>Andorid-okHttp</title>
-    <link href="http://example.com/2022/10/12/Andorid-okHttp/"/>
-    <id>http://example.com/2022/10/12/Andorid-okHttp/</id>
+    <link href="http://example.com/2022/10/12/android/Andorid-okHttp/"/>
+    <id>http://example.com/2022/10/12/android/Andorid-okHttp/</id>
     <published>2022-10-12T05:40:53.000Z</published>
     <updated>2022-10-12T05:43:00.356Z</updated>
     
@@ -557,8 +529,8 @@
   
   <entry>
     <title>Andorid-databinding使用</title>
-    <link href="http://example.com/2022/10/12/Andorid-databinding%E4%BD%BF%E7%94%A8/"/>
-    <id>http://example.com/2022/10/12/Andorid-databinding%E4%BD%BF%E7%94%A8/</id>
+    <link href="http://example.com/2022/10/12/android/Andorid-databinding%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2022/10/12/android/Andorid-databinding%E4%BD%BF%E7%94%A8/</id>
     <published>2022-10-12T05:39:02.000Z</published>
     <updated>2022-10-12T06:07:55.276Z</updated>
     
@@ -580,6 +552,37 @@
     <category term="databinding" scheme="http://example.com/tags/databinding/"/>
     
     <category term="Kotlin" scheme="http://example.com/tags/Kotlin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GAN-Condition GAN</title>
+    <link href="http://example.com/2022/10/12/gan/GAN-Condition-GAN/"/>
+    <id>http://example.com/2022/10/12/gan/GAN-Condition-GAN/</id>
+    <published>2022-10-12T05:21:26.000Z</published>
+    <updated>2022-10-15T01:53:21.161Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>论文地址：<br><a href="https://arxiv.org/abs/1411.1784">https://arxiv.org/abs/1411.1784</a></p></blockquote><h3 id="1-提出的背景"><a href="#1-提出的背景" class="headerlink" title="1. 提出的背景"></a>1. 提出的背景</h3><ol><li>传统的GAN虽然可以生成图像，但是无法控制具体生成图像的种类。例如在生成手写体时，GAN和DCGAN都可以生成0-9这十个数字，但是用户无法指定具体生成那个数字的图像；</li><li>GAN和DCGAN存在模式崩塌现象(Mode collapse(模式坍塌))。</li></ol><h3 id="2-主要思想"><a href="#2-主要思想" class="headerlink" title="2. 主要思想"></a>2. 主要思想</h3><ul><li>GAN主要包括两个网络，一个生成器和一个判别器，GAN的主要优化函数是</li></ul><p>$\begin{array}{c}<br>\min _{G} \max _{D} V(D, G)=\mathbb{E} x \sim p d a t a(x)[\log D(x)] \<br>+\mathbb{E} z \sim p d a t a(z)[\log (1-D(G(z)))]<br>\end{array}$<br>CGAN与传统的GAN相比，区别就是增加了标签作为训练的一个输入，CGAN的优化函数为<br>$\min <em>{G} \max <em>{D} V(D, G)=\mathbb{E}</em>{x \sim p \text { data }(x)}[\log D(x \mid y)]+\mathbb{E}</em>{z \sim p \text { data }(z)}[\log (1-D(G(z \mid y)))]$</p><ul><li>结构图：</li></ul><p><img src="https://pic1.imgdb.cn/item/634a122416f2c2beb19d4c4b.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=MzGA8&amp;originHeight=376&amp;originWidth=700&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="></p><h3 id="3-具体实现"><a href="#3-具体实现" class="headerlink" title="3. 具体实现"></a>3. 具体实现</h3><ol><li><p>生成器</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Generator</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Generator, self).__init__()</span><br><span class="line">        <span class="comment"># 两个128 x 7 x 7 cat后依然为256 x 7 x 7</span></span><br><span class="line">        self.linear1 = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">100</span>, <span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm1d(<span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">        )</span><br><span class="line">        self.linear2 = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">10</span>, <span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm1d(<span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.model = nn.Sequential(</span><br><span class="line">            <span class="comment"># 128 x 7 x 7</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">256</span>, <span class="number">128</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            <span class="comment"># 64 x 14 x 14</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">128</span>, <span class="number">64</span>, kernel_size=<span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">64</span>),</span><br><span class="line">            <span class="comment"># 1 x 28 x 28</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">64</span>, <span class="number">1</span>, kernel_size=<span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.Tanh()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, c</span>):</span><br><span class="line">        x = self.linear1(x)</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">128</span>, <span class="number">7</span>, <span class="number">7</span>)</span><br><span class="line">        c = self.linear2(c)</span><br><span class="line">        c = c.view(-<span class="number">1</span>, <span class="number">128</span>, <span class="number">7</span>, <span class="number">7</span>)</span><br><span class="line">        <span class="comment"># 256 x 7 x 7</span></span><br><span class="line">        <span class="comment"># 在channels方面合并</span></span><br><span class="line">        x = torch.cat([x, c], dim=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.model(x)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p>判别器接收两个输入，一个是随机噪声，一个是标签，将噪声和标签转换为长度128x7x7的向量，再将两个向量连接起来，构成一个256x7x7的向量，再进行三次的转置卷积，最终输出一个1x28x28（与mnist数据集的大小保持一致）的图像。</p></li><li><p>判别器</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Discriminator</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Discriminator, self).__init__()</span><br><span class="line">        <span class="comment"># input: 1 x 28 x 28 + 10 condition</span></span><br><span class="line">        self.linear = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">10</span>, <span class="number">1</span> * <span class="number">28</span> * <span class="number">28</span>),</span><br><span class="line">            nn.ReLU()</span><br><span class="line">        )</span><br><span class="line">        self.model = nn.Sequential(</span><br><span class="line">            nn.Conv2d(<span class="number">2</span>, <span class="number">64</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">            nn.LeakyReLU(),</span><br><span class="line">            nn.Dropout(p=<span class="number">0.3</span>),</span><br><span class="line">            nn.Conv2d(<span class="number">64</span>, <span class="number">128</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">            nn.LeakyReLU(),</span><br><span class="line">            nn.Dropout(p=<span class="number">0.3</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">128</span> * <span class="number">6</span> * <span class="number">6</span>, <span class="number">1</span>),</span><br><span class="line">            nn.Sigmoid()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, c</span>):</span><br><span class="line">        c = self.linear(c)</span><br><span class="line">        c = c.view(-<span class="number">1</span>, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">        <span class="comment"># 2 x 28 x 28</span></span><br><span class="line">        x = torch.cat([x, c], dim=<span class="number">1</span>)</span><br><span class="line">        x = self.model(x)</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">128</span> * <span class="number">6</span> * <span class="number">6</span>)</span><br><span class="line">        x = self.fc(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></tbody></table></figure><p>判别器也是接收两个参数，一个是图像（可能是真实图像，也可能是生成的虚假的图像），另一个是标签，首先将标签转换为1x28x28的形状，然后将这个向量和图像连接起来，构成一个2x28x28的向量，最后经过卷积、激活、池化、线形层输出一个结果（真或者假）。</p></li><li><p>训练</p></li></ol><ul><li>训练判别器</li></ul><p>判别器要尽可能地区分出真实图片和虚假的图片；<br>将真实的图像和标签放入到判别器中，计算判别器输出与1之间的损失；<br>根据噪声生成虚假的图片，将虚假的图片和标签放入到判别器中，计算判别器输出和0之间的损失；<br>反向传播、迭代优化。</p><ul><li>训练生成器</li></ul><p>生成器要尽可能的使生成的图像接近真实的图像，让判别器无法判断出图片的来源（真实还是生成）；<br>将生成的虚假的图片放入到判别器中，计算判别器的输出与1之间的损失；<br>反向传播、迭代优化。</p><h3 id="4-代码"><a href="#4-代码" class="headerlink" title="4. 代码"></a>4. 代码</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn, cuda</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> torch.utils.tensorboard <span class="keyword">import</span> SummaryWriter</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">os.environ[<span class="string">"KMP_DUPLICATE_LIB_OK"</span>] = <span class="string">"TRUE"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">one_hot</span>(<span class="params">x, class_count=<span class="number">10</span></span>):</span><br><span class="line">    <span class="keyword">return</span> torch.eye(class_count)[x, :]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Generator</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Generator, self).__init__()</span><br><span class="line">        <span class="comment"># 两个128 x 7 x 7 cat后依然为256 x 7 x 7</span></span><br><span class="line">        self.linear1 = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">100</span>, <span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm1d(<span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">        )</span><br><span class="line">        self.linear2 = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">10</span>, <span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm1d(<span class="number">128</span> * <span class="number">7</span> * <span class="number">7</span>),</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        self.model = nn.Sequential(</span><br><span class="line">            <span class="comment"># 128 x 7 x 7</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">256</span>, <span class="number">128</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">            <span class="comment"># 64 x 14 x 14</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">128</span>, <span class="number">64</span>, kernel_size=<span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">64</span>),</span><br><span class="line">            <span class="comment"># 1 x 28 x 28</span></span><br><span class="line">            nn.ConvTranspose2d(<span class="number">64</span>, <span class="number">1</span>, kernel_size=<span class="number">4</span>, stride=<span class="number">2</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.Tanh()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, c</span>):</span><br><span class="line">        x = self.linear1(x)</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">128</span>, <span class="number">7</span>, <span class="number">7</span>)</span><br><span class="line">        c = self.linear2(c)</span><br><span class="line">        c = c.view(-<span class="number">1</span>, <span class="number">128</span>, <span class="number">7</span>, <span class="number">7</span>)</span><br><span class="line">        <span class="comment"># 256 x 7 x 7</span></span><br><span class="line">        <span class="comment"># 在channels方面合并</span></span><br><span class="line">        x = torch.cat([x, c], dim=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.model(x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Discriminator</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(Discriminator, self).__init__()</span><br><span class="line">        <span class="comment"># input: 1 x 28 x 28 + 10 condition</span></span><br><span class="line">        self.linear = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">10</span>, <span class="number">1</span> * <span class="number">28</span> * <span class="number">28</span>),</span><br><span class="line">            nn.ReLU()</span><br><span class="line">        )</span><br><span class="line">        self.model = nn.Sequential(</span><br><span class="line">            nn.Conv2d(<span class="number">2</span>, <span class="number">64</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">            nn.LeakyReLU(),</span><br><span class="line">            nn.Dropout(p=<span class="number">0.3</span>),</span><br><span class="line">            nn.Conv2d(<span class="number">64</span>, <span class="number">128</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">            nn.LeakyReLU(),</span><br><span class="line">            nn.Dropout(p=<span class="number">0.3</span>),</span><br><span class="line">            nn.BatchNorm2d(<span class="number">128</span>),</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(<span class="number">128</span> * <span class="number">6</span> * <span class="number">6</span>, <span class="number">1</span>),</span><br><span class="line">            nn.Sigmoid()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x, c</span>):</span><br><span class="line">        c = self.linear(c)</span><br><span class="line">        c = c.view(-<span class="number">1</span>, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>)</span><br><span class="line">        <span class="comment"># 2 x 28 x 28</span></span><br><span class="line">        x = torch.cat([x, c], dim=<span class="number">1</span>)</span><br><span class="line">        x = self.model(x)</span><br><span class="line">        x = x.view(-<span class="number">1</span>, <span class="number">128</span> * <span class="number">6</span> * <span class="number">6</span>)</span><br><span class="line">        x = self.fc(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">transform = transforms.Compose([</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize(mean=<span class="number">0.5</span>, std=<span class="number">0.5</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">dataset = torchvision.datasets.MNIST(<span class="string">"./data"</span>, train=<span class="literal">True</span>,</span><br><span class="line">                                     transform=transform,</span><br><span class="line">                                     download=<span class="literal">True</span>,</span><br><span class="line">                                     target_transform=one_hot)</span><br><span class="line"></span><br><span class="line">dataloader = data.DataLoader(dataset, batch_size=<span class="number">512</span>, shuffle=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">device = <span class="string">"cuda"</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">"cpu"</span></span><br><span class="line">gen = Generator().to(device)</span><br><span class="line">disc = Discriminator().to(device)</span><br><span class="line">loss_fn = torch.nn.BCELoss()</span><br><span class="line">opt_g = torch.optim.RMSprop(gen.parameters(), lr=<span class="number">0.0001</span>)</span><br><span class="line">opt_d = torch.optim.Adam(disc.parameters(), lr=<span class="number">0.0001</span>)</span><br><span class="line">num_epochs = <span class="number">201</span></span><br><span class="line"></span><br><span class="line">writer_g = SummaryWriter(<span class="string">"/root/tf-logs/g"</span>)</span><br><span class="line">writer_d = SummaryWriter(<span class="string">"/root/tf-logs/d"</span>)</span><br><span class="line"></span><br><span class="line">noise_seed = torch.randn(<span class="number">16</span>, <span class="number">100</span>, device=device)</span><br><span class="line"><span class="comment"># 16个0-10之间的随机整数</span></span><br><span class="line">label_seed = torch.randint(<span class="number">0</span>, <span class="number">10</span>, size=(<span class="number">16</span>,))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"label seed: <span class="subst">{label_seed}</span>"</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(label_seed))</span><br><span class="line">label_seed_onehot = one_hot(label_seed).to(device)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f"label_seed: <span class="subst">{label_seed}</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    D_epoch_loss = <span class="number">0</span></span><br><span class="line">    G_epoch_loss = <span class="number">0</span></span><br><span class="line">    count = <span class="built_in">len</span>(dataset)</span><br><span class="line">    loop = tqdm(dataloader, leave=<span class="literal">True</span>, desc=<span class="string">f"Epoch: <span class="subst">{epoch}</span>/<span class="subst">{num_epochs}</span>"</span>)</span><br><span class="line">    <span class="keyword">for</span> step, (img, label) <span class="keyword">in</span> <span class="built_in">enumerate</span>(loop):</span><br><span class="line">        img = img.to(device)</span><br><span class="line">        label = label.to(device)</span><br><span class="line">        size = img.shape[<span class="number">0</span>]</span><br><span class="line">        random_seed = torch.randn(size, <span class="number">100</span>, device=device)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 训练判别器</span></span><br><span class="line">        opt_d.zero_grad()</span><br><span class="line">        <span class="comment"># 真实图片放入判别器中</span></span><br><span class="line">        real_output = disc(img, label)</span><br><span class="line">        d_real_loss = loss_fn(real_output, torch.ones_like(real_output, device=device))</span><br><span class="line">        <span class="comment"># 生成图像并放入判别器中</span></span><br><span class="line">        gen_img = gen(random_seed, label)</span><br><span class="line">        fake_output = disc(gen_img.detach(), label)</span><br><span class="line">        d_fake_loss = loss_fn(fake_output, torch.zeros_like(fake_output, device=device))</span><br><span class="line">        d_loss = (d_real_loss + d_fake_loss) / <span class="number">2</span></span><br><span class="line">        d_loss.backward()</span><br><span class="line">        opt_d.step()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 训练生成器</span></span><br><span class="line">        opt_g.zero_grad()</span><br><span class="line">        fake_output = disc(gen_img, label)</span><br><span class="line">        g_loss = loss_fn(fake_output, torch.ones_like(fake_output, device=device))</span><br><span class="line">        g_loss.backward()</span><br><span class="line">        opt_g.step()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">            D_epoch_loss += d_loss.item()</span><br><span class="line">            G_epoch_loss += g_loss.item()</span><br><span class="line">            loop.set_postfix(G_loss=<span class="string">f"<span class="subst">{np.<span class="built_in">round</span>(G_epoch_loss, <span class="number">2</span>)}</span>"</span>, D_loss=<span class="string">f"<span class="subst">{np.<span class="built_in">round</span>(D_epoch_loss, <span class="number">2</span>)}</span>"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        D_epoch_loss /= count</span><br><span class="line">        G_epoch_loss /= count</span><br><span class="line">        writer_g.add_scalar(<span class="string">"loss"</span>, G_epoch_loss, epoch)</span><br><span class="line">        writer_d.add_scalar(<span class="string">"loss"</span>, D_epoch_loss, epoch)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> epoch % <span class="number">20</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">                gen_img = gen(noise_seed, label_seed_onehot)</span><br><span class="line">                writer_g.add_images(<span class="string">"gen mnist"</span>, gen_img, epoch)</span><br><span class="line"></span><br><span class="line">torch.save(gen.state_dict(), <span class="string">"./gen.pth"</span>)</span><br></pre></td></tr></tbody></table></figure><h3 id="5-训练结果"><a href="#5-训练结果" class="headerlink" title="5. 训练结果"></a>5. 训练结果</h3><p><img src="https://pic1.imgdb.cn/item/634a125216f2c2beb19d8ee0.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;id=QjMRz&amp;originHeight=108&amp;originWidth=434&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title="></p><h3 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5. 参考资料"></a>5. 参考资料</h3><ol><li><a href="https://arxiv.org/abs/1411.1784">https://arxiv.org/abs/1411.1784</a></li><li><a href="https://blog.csdn.net/qq_41647438/article/details/103007057">https://blog.csdn.net/qq_41647438/article/details/103007057</a></li><li><a href="https://blog.csdn.net/xjp_xujiping/article/details/102719363">https://blog.csdn.net/xjp_xujiping/article/details/102719363</a></li><li><a href="https://zhuanlan.zhihu.com/p/510346635">https://zhuanlan.zhihu.com/p/510346635</a></li><li><a href="https://www.jianshu.com/p/39c57e9a6630">https://www.jianshu.com/p/39c57e9a6630</a></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;论文地址：&lt;br&gt;&lt;a href=&quot;https://arxiv.org/abs/1411.1784&quot;&gt;https://arxiv.org/abs/1411.1784&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-提出的背景&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    <category term="GAN" scheme="http://example.com/categories/GAN/"/>
+    
+    
+    <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
+    
+    <category term="GAN" scheme="http://example.com/tags/GAN/"/>
+    
+    <category term="CGAN" scheme="http://example.com/tags/CGAN/"/>
     
   </entry>
   

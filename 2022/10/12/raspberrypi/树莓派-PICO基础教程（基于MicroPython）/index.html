@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>树莓派 PICO基础教程（基于MicroPython） | elijah</title><meta name="keywords" content="MCU,树莓派pico,MicroPython"><meta name="author" content="elijah"><meta name="copyright" content="elijah"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="树莓派 PICO基础教程（基于MicroPython）1 树莓派 PICO 简介1.1 简介　　Raspberry Pi Pico是具有灵活数字接口的低成本，高性能微控制器板。它集成了Raspberry Pi自己的RP2040微控制器芯片，运行速度高达133 MHz的双核Arm Cortex M0 +处理器，嵌入式264KB SRAM和2MB板载闪存以及26个多功能GPIO引脚。对于软件开发，可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派 PICO基础教程（基于MicroPython）">
+<meta property="og:url" content="http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/index.html">
+<meta property="og:site_name" content="elijah">
+<meta property="og:description" content="树莓派 PICO基础教程（基于MicroPython）1 树莓派 PICO 简介1.1 简介　　Raspberry Pi Pico是具有灵活数字接口的低成本，高性能微控制器板。它集成了Raspberry Pi自己的RP2040微控制器芯片，运行速度高达133 MHz的双核Arm Cortex M0 +处理器，嵌入式264KB SRAM和2MB板载闪存以及26个多功能GPIO引脚。对于软件开发，可以">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/62bfe4675be16ec74a0bf64d.png">
+<meta property="article:published_time" content="2022-10-12T06:06:45.000Z">
+<meta property="article:modified_time" content="2022-10-12T06:07:24.742Z">
+<meta property="article:author" content="elijah">
+<meta property="article:tag" content="MCU">
+<meta property="article:tag" content="树莓派pico">
+<meta property="article:tag" content="MicroPython">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/62bfe4675be16ec74a0bf64d.png"><link rel="shortcut icon" href="https://pic1.imgdb.cn/item/634a127b16f2c2beb19dc72c.jpg"><link rel="canonical" href="http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '树莓派 PICO基础教程（基于MicroPython）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-12 14:07:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="elijah" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic1.imgdb.cn/item/634a127b16f2c2beb19dc72c.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-link"></i><span> 日常</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/62bfe4675be16ec74a0bf64d.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">elijah</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 类别</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-link"></i><span> 日常</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">树莓派 PICO基础教程（基于MicroPython）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-12T06:06:45.000Z" title="发表于 2022-10-12 14:06:45">2022-10-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-12T06:07:24.742Z" title="更新于 2022-10-12 14:07:24">2022-10-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MCU/">MCU</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="树莓派 PICO基础教程（基于MicroPython）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="树莓派-PICO基础教程（基于MicroPython）"><a href="#树莓派-PICO基础教程（基于MicroPython）" class="headerlink" title="树莓派 PICO基础教程（基于MicroPython）"></a>树莓派 PICO基础教程（基于MicroPython）</h3><h4 id="1-树莓派-PICO-简介"><a href="#1-树莓派-PICO-简介" class="headerlink" title="1 树莓派 PICO 简介"></a>1 树莓派 PICO 简介</h4><h5 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1 简介"></a>1.1 简介</h5><p>　　<code>Raspberry Pi Pico</code>是具有灵活数字接口的低成本，高性能微控制器板。它集成了<code>Raspberry Pi</code>自己的<code>RP2040</code>微控制器芯片，运行速度高达133 MHz的双核<code>Arm Cortex M0 +</code>处理器，嵌入式264KB SRAM和2MB板载闪存以及26个多功能GPIO引脚。对于软件开发，可以使用<code>Raspberry Pi</code>的C / C ++ SDK或MicroPython。<a target="_blank" rel="noopener" href="https://www.waveshare.com/wiki/Raspberry_Pi_Pico">^1</a></p>
+<span id="more"></span>
+
+<h5 id="1-2-配置-2"><a href="#1-2-配置-2" class="headerlink" title="1.2 配置 ^2"></a>1.2 配置 <a target="_blank" rel="noopener" href="https://pico.org.cn/">^2</a></h5><table>
+<thead>
+<tr>
+<th align="center">树莓派 PICO配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">双核 Arm Cortex-M0 + @ 133MHz</td>
+</tr>
+<tr>
+<td align="center">2 个 UART、2 个 SPI 控制器和 2 个 I2C 控制器</td>
+</tr>
+<tr>
+<td align="center">芯片内置 264KB SRAM 和 2MB 的板载闪存</td>
+</tr>
+<tr>
+<td align="center">16 个 PWM 通道</td>
+</tr>
+<tr>
+<td align="center">通过专用 QSPI 总线支持最高 16MB 的片外闪存</td>
+</tr>
+<tr>
+<td align="center">USB 1.1 主机和设备支持</td>
+</tr>
+<tr>
+<td align="center">DMA 控制器</td>
+</tr>
+<tr>
+<td align="center">8 个树莓派可编程 I/O（PIO）状态机，用于自定义外围设备支持</td>
+</tr>
+<tr>
+<td align="center">30 个 GPIO 引脚，其中 4 个可用作模拟输入</td>
+</tr>
+<tr>
+<td align="center">支持 UF2 的 USB 大容量存储启动模式，用于拖放式编程</td>
+</tr>
+</tbody></table>
+<h5 id="1-3-引脚图"><a href="#1-3-引脚图" class="headerlink" title="1.3 引脚图"></a>1.3 引脚图</h5><p><img src="https://pic.imgdb.cn/item/60a8f5f26ae4f77d35bc0cd4.png" alt="树莓派 PICO 引脚图"></p>
+<h5 id="1-4-尺寸"><a href="#1-4-尺寸" class="headerlink" title="1.4 尺寸"></a>1.4 尺寸</h5><p><img src="https://pic.imgdb.cn/item/60ab5d2dce272128a6ba5a8d.png"></p>
+<p><img src="https://pic.imgdb.cn/item/60ab5d2dce272128a6ba5aad.jpg"></p>
+<p><img src="https://pic.imgdb.cn/item/60ab5d2dce272128a6ba5ade.jpg"></p>
+<h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2 安装"></a>2 安装</h4><h5 id="2-1-烧录固件"><a href="#2-1-烧录固件" class="headerlink" title="2.1 烧录固件"></a>2.1 烧录固件</h5><ol>
+<li>点击 <a target="_blank" rel="noopener" href="https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2">https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2</a> 链接下载UF2文件；</li>
+</ol>
+<blockquote>
+<p>如果连接失效，可以进入 <a target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/rp2040/getting-started/#getting-started-with-micropython">https://www.raspberrypi.org/documentation/rp2040/getting-started/#getting-started-with-micropython</a>官网下载</p>
+</blockquote>
+<ol start="2">
+<li>按住BOOTSEL键不放，将Pico插入电脑的USB串口，电脑上会弹出一个新的U盘文件夹，把刚刚下载的UF2文件拖拽到文件夹中，树莓派 PICO将会自动重启，此时，固件烧录完成。</li>
+</ol>
+<h5 id="2-2-安装IDE（Thonny-IDE）"><a href="#2-2-安装IDE（Thonny-IDE）" class="headerlink" title="2.2 安装IDE（Thonny IDE）"></a>2.2 安装IDE（Thonny IDE）</h5><ol>
+<li>进入软件官网 <a target="_blank" rel="noopener" href="https://thonny.org/">https://thonny.org/</a>下载软件，最好下载最新版的，否则可能不支持树莓派 PICO；</li>
+<li>安装Thonny，安装完成后打开Thonny软件，打开工具-&gt;设置-&gt; 解释器，选择<code>MicroPython(Raspberry Pi Pico)</code>解释器，并在串口处选择树莓派PICO的串口号（如果板子已经连接在电脑上，软件一般会自动检测串口号）</li>
+<li>重启软件，可以看到软件左下方显示了树莓派PICO中的文件；</li>
+</ol>
+<blockquote>
+<p>如果没有显示左侧文件树的话可以勾选 视图-&gt;文件</p>
+</blockquote>
+<h5 id="2-3-离线运行程序"><a href="#2-3-离线运行程序" class="headerlink" title="2.3 离线运行程序"></a>2.3 离线运行程序</h5><p><img src="https://pic.imgdb.cn/item/60ab833cce272128a6cfe120.png" alt="新建文件"></p>
+<p>　　新建文件，编写完代码后，按住<code>ctrl+s</code>将该文件保存在树莓派PICO上，并命名为<code>main.py</code>(一定要加后缀<code>.py</code>)，下次树莓派PICO通电时便会自动运行<code>main.py</code>中的程序。</p>
+<h4 id="3-基础"><a href="#3-基础" class="headerlink" title="3 基础"></a>3 基础</h4><h5 id="3-01-点亮板载LED灯"><a href="#3-01-点亮板载LED灯" class="headerlink" title="3.01 点亮板载LED灯"></a>3.01 点亮板载LED灯</h5><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 构建led对象</span></span><br><span class="line">    <span class="comment"># 板载LED灯连接与引脚25相连</span></span><br><span class="line">    <span class="comment"># LED = Pin(id, mode, pull)</span></span><br><span class="line">    <span class="comment"># id:PICO引脚编号</span></span><br><span class="line">    <span class="comment"># mode:输入输出方式，有Pin.IN(输入)和Pin.OUT(输出)两种</span></span><br><span class="line">    <span class="comment"># pull:上下拉电阻配置，有None(无上下拉电阻)、Pin.PULL_UP(上拉电阻)和Pin.PULL_DOWN(下拉电阻)三种</span></span><br><span class="line">    LED = Pin(<span class="number">25</span>, Pin.OUT)</span><br><span class="line">    <span class="comment"># 高电平点亮</span></span><br><span class="line">    LED.value(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="3-02-板载LED闪烁"><a href="#3-02-板载LED闪烁" class="headerlink" title="3.02 板载LED闪烁"></a>3.02 板载LED闪烁</h5><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">from</span> utime <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line">led = Pin(<span class="number">25</span>, Pin.OUT)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># led点亮</span></span><br><span class="line">        led.value(<span class="number">1</span>)</span><br><span class="line">        utime.sleep_ms(<span class="number">1000</span>)</span><br><span class="line">        <span class="comment"># led熄灭</span></span><br><span class="line">        led.value(<span class="number">0</span>)</span><br><span class="line">        utime.sleep_ms(<span class="number">1000</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="3-03-LED流水灯"><a href="#3-03-LED流水灯" class="headerlink" title="3.03 LED流水灯"></a>3.03 LED流水灯</h5><ol>
+<li>LED发光二极管图片</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60ab839fce272128a6d2231d.jpg"></p>
+<ol start="2">
+<li>LED发光二极管正负极区分</li>
+</ol>
+<ul>
+<li>一般引脚长的一端为正极，引脚短的为负极</li>
+<li>看发光二极管内部，支架大的为负极，支架小的为负极</li>
+</ul>
+<ol start="3">
+<li>电路连线图</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60ab83b6ce272128a6d2ad56.png"></p>
+<p><img src="https://pic.imgdb.cn/item/60ab83a0ce272128a6d226b2.jpg"></p>
+<ol start="4">
+<li>代码</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义LED引脚数组</span></span><br><span class="line">leds = [Pin(i,Pin.OUT) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">5</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># 依次点亮</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">            leds[n].value(<span class="number">1</span>)</span><br><span class="line">            utime.sleep_ms(<span class="number">200</span>)</span><br><span class="line">        <span class="comment"># 依次熄灭</span></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">5</span>):</span><br><span class="line">            leds[n].value(<span class="number">0</span>)</span><br><span class="line">            utime.sleep_ms(<span class="number">100</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/60ab83a0ce272128a6d22746.gif"></p>
+<h5 id="3-04-按键实验"><a href="#3-04-按键实验" class="headerlink" title="3.04 按键实验"></a>3.04 按键实验</h5><ol>
+<li>四角按键图片</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60ab86bcce272128a6e71d47.jpg"></p>
+<ol start="2">
+<li>四角按键怎么连接</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60ab86bcce272128a6e71d73.jpg"></p>
+<p>默认按键未按下的情况下，12相连接，34相连接；当按下按键时，1234才相连接。</p>
+<ol start="3">
+<li>电路接线图</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60ab89e3ce272128a6fc8124.png"></p>
+<p><img src="https://pic.imgdb.cn/item/60ab89e3ce272128a6fc8143.jpg"></p>
+<ol start="4">
+<li>代码</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置按键</span></span><br><span class="line"><span class="comment"># key = machine.Pin(id, mode, pull)</span></span><br><span class="line"><span class="comment"># id:树莓派Pico引脚编号</span></span><br><span class="line"><span class="comment"># mode:输入输出方式，有Pin.IN(输入)和Pin.OUT(输出)两种</span></span><br><span class="line"><span class="comment"># pull:上下拉电阻配置，有None(无上下拉电阻)、Pin.PULL_UP(上拉电阻)和Pin.PULL_DOWN(下拉电阻)三种</span></span><br><span class="line">key = Pin(<span class="number">0</span>, Pin.IN, Pin.PULL_UP)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="comment"># print(key.value())</span></span><br><span class="line">        <span class="keyword">if</span> key.value() == <span class="number">0</span>:</span><br><span class="line">            <span class="comment"># 等待一段时间，防止抖动</span></span><br><span class="line">            utime.sleep_ms(<span class="number">100</span>)</span><br><span class="line">            <span class="keyword">if</span> key.value() == <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">'The button is pressed'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>按键消抖可以参考<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%89%E9%94%AE%E6%B6%88%E6%8A%96">https://baike.baidu.com/item/%E6%8C%89%E9%94%AE%E6%B6%88%E6%8A%96</a></p>
+</blockquote>
+<h5 id="3-05-外部中断-改进3-04-按键实验"><a href="#3-05-外部中断-改进3-04-按键实验" class="headerlink" title="3.05 外部中断(改进3.04 按键实验)"></a>3.05 外部中断(改进3.04 按键实验)</h5><ol>
+<li>什么是外部中断</li>
+</ol>
+<p>　　外部中断是单片机实时地处理外部事件的一种内部机制。当某种外部事件发生时，单片机的中断系统将迫使CPU暂停正在执行的程序，转而去进行中断事件的处理；中断处理完毕后．又返回被中断的程序处，继续执行下去。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD">^3</a></p>
+<ol start="2">
+<li>外部中断的作用</li>
+</ol>
+<ul>
+<li>节省CPU资源</li>
+</ul>
+<ol start="3">
+<li>代码实现</li>
+</ol>
+<p>　　在3.04 按键实验中，检测按键是否被按下采用的是在主程序中写死循环的办法，假如这个按键被按下的频率十分低（一天只有几次被按下），采用死循环的方法将会浪费大量的CPU资源，而采用外部中断的方式检测按键是否被按下将大大节省CPU资源。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line"><span class="comment">#配置按键</span></span><br><span class="line">key = Pin(<span class="number">0</span>, Pin.IN, Pin.PULL_UP)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">external_interrupt</span>(<span class="params">key</span>):</span><br><span class="line">    <span class="comment"># 消除抖动</span></span><br><span class="line">    utime.sleep_ms(<span class="number">100</span>)</span><br><span class="line">    <span class="comment"># 再次判断按键是否被按下</span></span><br><span class="line">    <span class="keyword">if</span> key.value() == <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'The button is pressed'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># KEY.irq(handler,trigger)</span></span><br><span class="line">    <span class="comment"># handler:中断执行的回调函数</span></span><br><span class="line">    <span class="comment"># trigger:触发中断的方式，分别为Pin.IRQ_FALLING(下降沿触发)、</span></span><br><span class="line">    <span class="comment"># Pin.IRQ_RISING(上升沿触发)、Pin.IRQ_LOW_LEVEL(低电平触发)和</span></span><br><span class="line">    <span class="comment"># Pin.IRQ_HIGH_LEVEL(高电平触发)四种</span></span><br><span class="line">    <span class="comment"># 定义中断，下降沿触发</span></span><br><span class="line">    key.irq(external_interrupt, Pin.IRQ_FALLING)</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="3-06-定时器中断-改进3-02-板载LED闪烁"><a href="#3-06-定时器中断-改进3-02-板载LED闪烁" class="headerlink" title="3.06 定时器中断(改进3.02 板载LED闪烁)"></a>3.06 定时器中断(改进3.02 板载LED闪烁)</h5><ol>
+<li>什么是定时器中断</li>
+</ol>
+<ul>
+<li>定时器中断是由单片机中的定时器溢出而申请的中断，即设定一个时间，到达这个时间后就会产生中断</li>
+</ul>
+<ol start="2">
+<li>代码</li>
+</ol>
+<p>通过设置定时器中断使树莓派PICO板载LED每隔两秒闪烁一次</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin, Timer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建LED对象</span></span><br><span class="line">led=Pin(<span class="number">25</span>, Pin.OUT)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 闪烁回调函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">twinkle</span>(<span class="params">tim</span>):</span><br><span class="line">    <span class="comment"># toggle方法:LED状态翻转</span></span><br><span class="line">    led.toggle()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 构建定时器</span></span><br><span class="line">    tim = Timer()</span><br><span class="line">    <span class="comment"># tim.init(period, mode, callback)</span></span><br><span class="line">    <span class="comment"># period:周期时间(单位为ms)</span></span><br><span class="line">    <span class="comment"># mode:工作模式，有Timer.ONE_SHOT(执行一次)和Timer.PERIODIC(周期性执行)两种</span></span><br><span class="line">    <span class="comment"># callback:定时器中断的回调函数</span></span><br><span class="line">    tim.init(period=<span class="number">2000</span>, mode=Timer.PERIODIC, callback=twinkle)</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="3-07-PWM-脉冲宽度调制-实现板载LED呼吸灯"><a href="#3-07-PWM-脉冲宽度调制-实现板载LED呼吸灯" class="headerlink" title="3.07 PWM 脉冲宽度调制(实现板载LED呼吸灯)"></a>3.07 PWM 脉冲宽度调制(实现板载LED呼吸灯)</h5><ol>
+<li>什么是PWM</li>
+</ol>
+<p>　　脉冲宽度调制是一种模拟控制方式，根据相应载荷的变化来调制晶体管基极或MOS管栅极的偏置，来实现晶体管或MOS管导通时间的改变，从而实现开关稳压电源输出的改变。这种方式能使电源的输出电压在工作条件变化时保持恒定，是利用微处理器的数字信号对模拟电路进行控制的一种非常有效的技术。脉冲宽度调制是利用微处理器的数字输出来对模拟电路进行控制的一种非常有效的技术，广泛应用在从测量、通信到功率控制与变换的许多领域中。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6/10813756?fromtitle=PWM&amp;fromid=3034961&amp;fr=aladdin">^4</a></p>
+<ol start="2">
+<li>代码</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin, Timer, PWM</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line">led = PWM(Pin(<span class="number">25</span>))</span><br><span class="line"><span class="comment"># 设置频率值</span></span><br><span class="line">led.freq(<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">led_value = <span class="number">0</span></span><br><span class="line"><span class="comment"># led以5%增长/减少的速度变化亮度</span></span><br><span class="line">led_space = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        led_value += led_space</span><br><span class="line">        <span class="keyword">if</span> led_value &gt;= <span class="number">100</span>:</span><br><span class="line">            led_value = <span class="number">100</span></span><br><span class="line">            led_space = -<span class="number">5</span></span><br><span class="line">        <span class="keyword">elif</span> led_value &lt;= <span class="number">0</span>:</span><br><span class="line">            led_value = <span class="number">0</span></span><br><span class="line">            led_space = <span class="number">5</span></span><br><span class="line">        <span class="comment"># 设置占空比，需在0-65535之间</span></span><br><span class="line">        led.duty_u16(<span class="built_in">int</span>(led_value * <span class="number">500</span>))</span><br><span class="line">        utime.sleep_ms(<span class="number">100</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/60aba708ce272128a6dc80f6.gif"></p>
+<h5 id="3-08-I2C总线-使用SSD1306-OLED屏幕"><a href="#3-08-I2C总线-使用SSD1306-OLED屏幕" class="headerlink" title="3.08 I2C总线(使用SSD1306 OLED屏幕)"></a>3.08 I2C总线(使用SSD1306 OLED屏幕)</h5><ol>
+<li>I2C总线简介</li>
+</ol>
+<p>　　I2C总线是由Philips公司开发的一种简单、双向二线制同步串行总线。它只需要两根线即可在连接于总线上的器件之间传送信息。I2C由 2 条线组成：SDA（串行数据线）和SCL（串行时钟线），都是双向I/O线。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/I2C%E6%80%BB%E7%BA%BF/918424?fromtitle=I2C&amp;fromid=1727975&amp;fr=aladdin">^5</a></p>
+<ol start="2">
+<li>SSD1306 OLED简介</li>
+</ol>
+<p>　　SSD1306是一款带控制器的用于OLED点阵图形显示系统的单片CMOS OLED/PLED驱动器。它由128个SEG（列输出）和64个COM（行输出）组成。该芯片专为共阴极OLED面板设计。<br>  SSD1306内置对比度控制器、显示RAM（GDDRAM）和振荡器，以此减少了外部元件的数量和功耗。该芯片有256级亮度控制。数据或命令由通用微控制器通过硬件选择的6800/8000系通用并行接口、I2C接口或串行外围接口发送。该芯片适用于许多小型便携式应用，如手机副显示屏、MP3播放器和计算器等。<a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/10b60c264a73f242336c1eb91a37f111f1850d88.html">^6</a></p>
+<ol start="3">
+<li>电路连线图</li>
+</ol>
+<p><img src="https://pic.imgdb.cn/item/60aba900ce272128a6edcaa5.png"></p>
+<ol start="4">
+<li>代码</li>
+</ol>
+<blockquote>
+<p>ssd1306.py下载地址： <a target="_blank" rel="noopener" href="https://elijah.lanzoui.com/iJ13fpnq6je">https://elijah.lanzoui.com/iJ13fpnq6je</a></p>
+<p>下载完成后，在Thonny软件左侧的文件窗口内找到这个文件，右键点击文件，选择上载到选项，文件即可传输到树莓派PICO上</p>
+</blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> SoftI2C, Pin</span><br><span class="line"><span class="comment"># 导入SSD1306驱动模块</span></span><br><span class="line"><span class="keyword">from</span> ssd1306 <span class="keyword">import</span> SSD1306_I2C</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 初始化SoftI2C</span></span><br><span class="line">    <span class="comment"># OLED屏幕的scl连接到树莓派PICO的GPIO0, sda连接到GPIO1</span></span><br><span class="line">    i2c = SoftI2C(scl=Pin(<span class="number">0</span>), sda=Pin(<span class="number">1</span>))</span><br><span class="line">    <span class="comment"># oled = SSD1306_I2C(width, height, i2c, addr)</span></span><br><span class="line">    <span class="comment"># width:屏幕宽</span></span><br><span class="line">    <span class="comment"># height: 屏幕高</span></span><br><span class="line">    <span class="comment"># i2c:已定义的I2C对象</span></span><br><span class="line">    oled = SSD1306_I2C(<span class="number">128</span>, <span class="number">64</span>, i2c) <span class="comment">#OLED显示屏初始化：128*64分辨率,OLED的I2C地址是0x3c</span></span><br><span class="line">    <span class="comment"># OLED显示的字符串，横坐标和纵坐标</span></span><br><span class="line">    oled.text(<span class="string">"Hello World!"</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="comment"># OLED显示</span></span><br><span class="line">    oled.show()</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://pic.imgdb.cn/item/60abaa43ce272128a6fa7be5.jpg"></p>
+<h4 id="4-传感器程序"><a href="#4-传感器程序" class="headerlink" title="4 传感器程序"></a>4 传感器程序</h4><h5 id="4-1-温度传感器-DS18B20"><a href="#4-1-温度传感器-DS18B20" class="headerlink" title="4.1 温度传感器(DS18B20)"></a>4.1 温度传感器(DS18B20)</h5><p>DS18B20是常用的数字温度传感器，其输出的是数字信号，具有体积小，硬件开销低，抗干扰能力强，精度高的特点。</p>
+<ul>
+<li><p>测温范围: -55℃～+125℃，固有测温误差1℃</p>
+</li>
+<li><p>工作电源: 3.0~5.5V/DC</p>
+</li>
+<li><p>单总线驱动，只占用一个IO口</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> machine, onewire, ds18x20, time, utime</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用GPIO0口传输数据</span></span><br><span class="line"><span class="comment"># 将DS18B20的VCC端连接到树莓派PICO的3V3(OUT)端</span></span><br><span class="line"><span class="comment"># 将DS18B20的数据端连接到树莓派PICO的GPIO0口</span></span><br><span class="line"><span class="comment"># 将DS18B20的GND端连接到树莓派PICO的GND端</span></span><br><span class="line">pin = machine.Pin(<span class="number">0</span>)</span><br><span class="line">sensor = ds18x20.DS18X20(onewire.OneWire(pin))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 扫描是否存在DS18B20设备</span></span><br><span class="line">roms = sensor.scan()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'Found a ds18x20 device'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取温度数据</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detect_tem</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">      sensor.convert_temp()</span><br><span class="line">      <span class="keyword">for</span> rom <span class="keyword">in</span> roms:</span><br><span class="line">        <span class="comment"># 打印出温度值</span></span><br><span class="line">        <span class="comment"># 第一个打印出来的数值可能不太准确，从第二条数据开始才会显示出正常数据</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"{:.3f}"</span>.<span class="built_in">format</span>(sensor.read_temp(rom)))  </span><br><span class="line">      utime.sleep_ms(<span class="number">2000</span>)</span><br><span class="line">      </span><br><span class="line"><span class="comment"># 程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    detect_tem()</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="4-2-温湿度传感器"><a href="#4-2-温湿度传感器" class="headerlink" title="4.2 温湿度传感器"></a>4.2 温湿度传感器</h5><blockquote>
+<p>DHT22.py文件下载地址： <a target="_blank" rel="noopener" href="https://elijah.lanzoui.com/iFueapnq6id">https://elijah.lanzoui.com/iFueapnq6id</a></p>
+<p>文件上传方法参考3.08 I2C总线</p>
+</blockquote>
+<h6 id="4-2-1-DHT11"><a href="#4-2-1-DHT11" class="headerlink" title="4.2.1 DHT11"></a>4.2.1 DHT11</h6><p>DHT11是一款有已校准数字信号输出的温湿度传感器。 其精度湿度±5%RH， 温度±2℃，量程湿度5-95%RH， 温度0-+50℃。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/DHT11/1206271?fr=aladdin">^9</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">from</span> DHT22 <span class="keyword">import</span> DHT22</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line">pin = Pin(<span class="number">0</span>,Pin.IN,Pin.PULL_UP)</span><br><span class="line"><span class="comment"># 创建dht11对象</span></span><br><span class="line"><span class="comment"># 将DHT11的VCC端连接到树莓派PICO的3V3(OUT)端</span></span><br><span class="line"><span class="comment"># 将DHT11的数据端连接到树莓派PICO的GPIO0口</span></span><br><span class="line"><span class="comment"># 将DHT11的GND端连接到树莓派PICO的GND端</span></span><br><span class="line">dht_sensor=DHT22(pin, dht11=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detection</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        T, H = dht_sensor.read()</span><br><span class="line">        <span class="keyword">if</span> T <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"sensor error"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"{}'C  {}%"</span>.<span class="built_in">format</span>(T, H))</span><br><span class="line">        utime.sleep_ms(<span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:    </span><br><span class="line">    detection()</span><br></pre></td></tr></tbody></table></figure>
+
+<h6 id="4-2-1-DHT22"><a href="#4-2-1-DHT22" class="headerlink" title="4.2.1 DHT22"></a>4.2.1 DHT22</h6><p>　　DHT22也称AM2302，是一款含有已校准数字信号输出的温湿度复合传感器，湿度量程范围0-99.9%RH，精度±2%RH，而温度量程范围是-40℃-80℃，精度±0.5℃。<a target="_blank" rel="noopener" href="https://blog.csdn.net/k1ang/article/details/98789397">^10</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> machine <span class="keyword">import</span> Pin</span><br><span class="line"><span class="keyword">from</span> DHT22 <span class="keyword">import</span> DHT22</span><br><span class="line"><span class="keyword">import</span> utime</span><br><span class="line"></span><br><span class="line">pin = Pin(<span class="number">0</span>,Pin.IN,Pin.PULL_UP)</span><br><span class="line"><span class="comment"># 创建dht11对象</span></span><br><span class="line"><span class="comment"># 将DHT11的VCC端连接到树莓派PICO的3V3(OUT)端</span></span><br><span class="line"><span class="comment"># 将DHT11的数据端连接到树莓派PICO的GPIO0口</span></span><br><span class="line"><span class="comment"># 将DHT11的GND端连接到树莓派PICO的GND端</span></span><br><span class="line">dht_sensor=DHT22(pin, dht11=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 循环函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">detection</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        T, H = dht_sensor.read()</span><br><span class="line">        <span class="keyword">if</span> T <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"sensor error"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"{:.2f}'C  {:.2f}%"</span>.<span class="built_in">format</span>(T, H))</span><br><span class="line">        utime.sleep_ms(<span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 程序入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:    </span><br><span class="line">    detection()</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">elijah</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/">http://example.com/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">elijah</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MCU/">MCU</a><a class="post-meta__tags" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BEpico/">树莓派pico</a><a class="post-meta__tags" href="/tags/MicroPython/">MicroPython</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/62bfe4675be16ec74a0bf64d.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/12/cnn/CNN-VGG%E6%80%BB%E7%BB%93/"><img class="prev-cover" src="https://pic1.imgdb.cn/item/634a106516f2c2beb19adaab.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CNN-VGG总结</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/12/object_detection/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/"><img class="next-cover" src="https://pic.imgdb.cn/item/62c18f405be16ec74a1693ca.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">YOLOV5-Pytorch(YOLO数据集格式)</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic1.imgdb.cn/item/634a127b16f2c2beb19dc72c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">elijah</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/weixin_40330033?type=blog" target="_blank" title="CSDN"><i class="fa fa-share-alt"></i></a><a class="social-icon" href="https://www.cnblogs.com" target="_blank" title="博客园"><i class="fa fa-share-alt-square"></i></a><a class="social-icon" href="https://github.com/ElijahZhangfh?tab=repositories" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:elijahzhangfh@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">树莓派 PICO基础教程（基于MicroPython）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%A0%91%E8%8E%93%E6%B4%BE-PICO-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1 树莓派 PICO 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-%E9%85%8D%E7%BD%AE-2"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 配置 ^2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-3-%E5%BC%95%E8%84%9A%E5%9B%BE"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 引脚图</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.1.4.</span> <span class="toc-text">1.4 尺寸</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">2 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-%E7%83%A7%E5%BD%95%E5%9B%BA%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 烧录固件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-%E5%AE%89%E8%A3%85IDE%EF%BC%88Thonny-IDE%EF%BC%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 安装IDE（Thonny IDE）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-%E7%A6%BB%E7%BA%BF%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 离线运行程序</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text">3 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-01-%E7%82%B9%E4%BA%AE%E6%9D%BF%E8%BD%BDLED%E7%81%AF"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.01 点亮板载LED灯</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-02-%E6%9D%BF%E8%BD%BDLED%E9%97%AA%E7%83%81"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.02 板载LED闪烁</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-03-LED%E6%B5%81%E6%B0%B4%E7%81%AF"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.03 LED流水灯</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-04-%E6%8C%89%E9%94%AE%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.3.4.</span> <span class="toc-text">3.04 按键实验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-05-%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%AD-%E6%94%B9%E8%BF%9B3-04-%E6%8C%89%E9%94%AE%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.3.5.</span> <span class="toc-text">3.05 外部中断(改进3.04 按键实验)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-06-%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%AD%E6%96%AD-%E6%94%B9%E8%BF%9B3-02-%E6%9D%BF%E8%BD%BDLED%E9%97%AA%E7%83%81"><span class="toc-number">1.3.6.</span> <span class="toc-text">3.06 定时器中断(改进3.02 板载LED闪烁)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-07-PWM-%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6-%E5%AE%9E%E7%8E%B0%E6%9D%BF%E8%BD%BDLED%E5%91%BC%E5%90%B8%E7%81%AF"><span class="toc-number">1.3.7.</span> <span class="toc-text">3.07 PWM 脉冲宽度调制(实现板载LED呼吸灯)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-08-I2C%E6%80%BB%E7%BA%BF-%E4%BD%BF%E7%94%A8SSD1306-OLED%E5%B1%8F%E5%B9%95"><span class="toc-number">1.3.8.</span> <span class="toc-text">3.08 I2C总线(使用SSD1306 OLED屏幕)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BC%A0%E6%84%9F%E5%99%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.</span> <span class="toc-text">4 传感器程序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-1-%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8-DS18B20"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 温度传感器(DS18B20)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 温湿度传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#4-2-1-DHT11"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">4.2.1 DHT11</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-2-1-DHT22"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">4.2.1 DHT22</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/15/cnn/CNN-UNet%E6%80%BB%E7%BB%93/" title="CNN-UNet总结"><img src="https://pic1.imgdb.cn/item/634a8af916f2c2beb1659c67.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CNN-UNet总结"/></a><div class="content"><a class="title" href="/2022/10/15/cnn/CNN-UNet%E6%80%BB%E7%BB%93/" title="CNN-UNet总结">CNN-UNet总结</a><time datetime="2022-10-15T10:29:38.000Z" title="发表于 2022-10-15 18:29:38">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/15/cnn/CNN-ResNet%E6%80%BB%E7%BB%93/" title="CNN-ResNet总结"><img src="https://pic1.imgdb.cn/item/630877d016f2c2beb1d344bc.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CNN-ResNet总结"/></a><div class="content"><a class="title" href="/2022/10/15/cnn/CNN-ResNet%E6%80%BB%E7%BB%93/" title="CNN-ResNet总结">CNN-ResNet总结</a><time datetime="2022-10-15T04:06:22.000Z" title="发表于 2022-10-15 12:06:22">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/12/cnn/CNN-VGG%E6%80%BB%E7%BB%93/" title="CNN-VGG总结"><img src="https://pic1.imgdb.cn/item/634a106516f2c2beb19adaab.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CNN-VGG总结"/></a><div class="content"><a class="title" href="/2022/10/12/cnn/CNN-VGG%E6%80%BB%E7%BB%93/" title="CNN-VGG总结">CNN-VGG总结</a><time datetime="2022-10-12T11:22:41.000Z" title="发表于 2022-10-12 19:22:41">2022-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/" title="树莓派 PICO基础教程（基于MicroPython）"><img src="https://pic.imgdb.cn/item/62bfe4675be16ec74a0bf64d.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="树莓派 PICO基础教程（基于MicroPython）"/></a><div class="content"><a class="title" href="/2022/10/12/raspberrypi/%E6%A0%91%E8%8E%93%E6%B4%BE-PICO%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E5%9F%BA%E4%BA%8EMicroPython%EF%BC%89/" title="树莓派 PICO基础教程（基于MicroPython）">树莓派 PICO基础教程（基于MicroPython）</a><time datetime="2022-10-12T06:06:45.000Z" title="发表于 2022-10-12 14:06:45">2022-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/12/object_detection/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/" title="YOLOV5-Pytorch(YOLO数据集格式)"><img src="https://pic.imgdb.cn/item/62c18f405be16ec74a1693ca.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="YOLOV5-Pytorch(YOLO数据集格式)"/></a><div class="content"><a class="title" href="/2022/10/12/object_detection/YOLOV5-Pytorch-YOLO%E6%95%B0%E6%8D%AE%E9%9B%86%E6%A0%BC%E5%BC%8F/" title="YOLOV5-Pytorch(YOLO数据集格式)">YOLOV5-Pytorch(YOLO数据集格式)</a><time datetime="2022-10-12T06:04:37.000Z" title="发表于 2022-10-12 14:04:37">2022-10-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By elijah</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
